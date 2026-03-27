@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Laughing Bot</title>
+
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+    }
+
+    form {
+      margin-top: 50px;
+    }
+
+    input, select {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: orange;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🎭 The Laughing Bot</h1>
+
+<form id="form">
+  <input id="name" placeholder="Name" required><br>
+  <input id="className" placeholder="Class" required><br>
+
+  <select id="timing">
+    <option value="12:00">12:00 PM</option>
+    <option value="3:00">3:00 PM</option>
+  </select><br>
+
+  <button type="submit">Register</button>
+</form>
+
+<script>
+document.getElementById("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    className: document.getElementById("className").value,
+    timing: document.getElementById("timing").value
+  };
+
+  await fetch("http://localhost:3000/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  alert("Registered Successfully!");
+});
+</script>
+
+</body>
+</html>
