@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The Laughing Bot 🎭</title>
+  <title>Harish V Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>The Laughing Bot 🎭</h1>
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <img src="profile.jpg" class="profile-img">
 
-  <form id="form">
-    <input id="name" placeholder="Name" required><br><br>
-    <input id="class" placeholder="Class" required><br><br>
+    <h1>Hi, I'm Harish V 👋</h1>
+    <p>Full Stack Developer | AI Student</p>
 
-    <select id="timing">
-      <option value="12:00">12:00</option>
-      <option value="3:00">3:00</option>
-    </select><br><br>
+    <button onclick="scrollToForm()">Register Now 🚀</button>
+  </div>
 
-    <button type="submit">Register</button>
-  </form>
+  <!-- FORM SECTION -->
+  <div class="form-container" id="form">
+    <h2>Register</h2>
+
+    <form action="/register" method="POST">
+      <input type="text" name="name" placeholder="Enter Name" required>
+
+      <input type="email" name="email" value="25aima24@kristujayanti.com" readonly>
+
+      <select name="course">
+        <option>AI</option>
+        <option>CS</option>
+        <option>IT</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
   <script>
-    document.getElementById("form").addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const data = {
-        name: document.getElementById("name").value,
-        class: document.getElementById("class").value,
-        timing: document.getElementById("timing").value
-      };
-
-      await fetch("https://laughing-bot-1.onrender.com/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
-      alert("Registered Successfully 🎉");
-    });
+    function scrollToForm() {
+      document.getElementById("form").scrollIntoView({ behavior: "smooth" });
+    }
   </script>
 
 </body>
