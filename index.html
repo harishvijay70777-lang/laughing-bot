@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Harish V Portfolio</title>
+  <title>😂 Laughing Bot Fest</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
   <div class="hero">
-    <img src="profile.jpg" class="profile-img">
+    <h1>😂 Laughing Bot Fest 😂</h1>
+    <p>"If you don’t laugh… we refund your sadness 🤣"</p>
 
-    <h1>Hi, I'm Harish V 👋</h1>
-    <p>Full Stack Developer | AI Student</p>
-
-    <button onclick="scrollToForm()">Register Now 🚀</button>
+    <a href="/portfolio.html">
+      <button>👨‍💻 View Developer</button>
+    </a>
   </div>
 
-  <!-- FORM SECTION -->
-  <div class="form-container" id="form">
-    <h2>Register</h2>
+  <div class="form-container">
+    <h2>🎤 Register for Comedy Show</h2>
 
     <form action="/register" method="POST">
-      <input type="text" name="name" placeholder="Enter Name" required>
 
-      <input type="email" name="email" value="25aima24@kristujayanti.com" readonly>
+      <input type="text" name="name" placeholder="Your Name 😂" required>
 
-      <select name="course">
-        <option>AI</option>
-        <option>CS</option>
-        <option>IT</option>
+      <input type="email" name="email" placeholder="Your Email 📧" required>
+
+      <!-- CLASS INPUT (TEXT) -->
+      <input type="text" name="className" placeholder="Your Class (e.g. BSc AIML A)" required>
+
+      <!-- TIMING OPTIONS -->
+      <select name="timing">
+        <option value="Morning Show">🌞 Morning Show (10 AM)</option>
+        <option value="Evening Show">🌙 Evening Show (5 PM)</option>
       </select>
 
-      <button type="submit">Submit</button>
+      <button type="submit">🤣 Book My Seat</button>
+
     </form>
   </div>
-
-  <script>
-    function scrollToForm() {
-      document.getElementById("form").scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
 
 </body>
 </html>
