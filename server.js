@@ -61,3 +61,24 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+const express = require("express");
+const path = require("path");
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files (HTML, CSS)
+app.use(express.static(path.join(__dirname)));
+
+// Show index.html on homepage
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.post("/register", (req, res) => {
+  res.send("Data received successfully");
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log("Server running on port " + PORT));
