@@ -27,7 +27,7 @@ app.post("/register", async (req, res) => {
 
   try {
     await pool.query(
-      "INSERT INTO registrations (name, email, class, timing) VALUES ($1, $2, $3, $4)",
+      "INSERT INTO registrations (name, email, class_name, timing) VALUES ($1, $2, $3, $4)",
       [name, email, className, timing]
     );
 
@@ -37,6 +37,5 @@ app.post("/register", async (req, res) => {
     res.send("❌ Error saving data");
   }
 });
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("Server running on port " + PORT));
